@@ -9,7 +9,8 @@ function App() {
   
   function handleToggle (e){
     e.preventDefault();
-    dispatch();
+    e.stopPropagation();
+    dispatch({ type: "TOGGLE_EDIT" });
   }
   
   return (
@@ -18,12 +19,11 @@ function App() {
       {!state.editing ? (
         <div>
           <TodoList state={state} dispatch={dispatch} />
-          <button onClick={handleToggle}>Add Todo</button>
         </div>) : (
         <div>
-          <TodoForm dispatch={dispatch}/>
-          <button onClick={handleToggle}>Cancel</button>
+          <TodoForm/>
         </div>)}
+        <button onClick={handleToggle}>Edit List</button>
     </div>
   );
 }

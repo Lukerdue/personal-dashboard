@@ -13,12 +13,12 @@ export const todoReducer = ( state, action ) => {
     let newState;
     if(action.type === "TOGGLE_EDIT"){
         newState = {...state, 
-        editing: !state.editing
+        editing: !state.editing,
     }
     } else if(action.type === "ADD_TODO"){
         newState = {...state,
         editing: false,
-        todos: [...state.todos, {...action.payload}]
+        todos: [...state.todos, {...action.payload}],
         }
     }
     return newState;

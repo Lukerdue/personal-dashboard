@@ -4,16 +4,8 @@ import React, { useState } from 'react';
 const placeholders = ['Do the dishes', 'learn react', 'apply for jobs', 'Workout', 'bathe the cat', 'plan Pathfinder', 'shave a peach'];
 
 function TodoForm (props) {
-    
     const [formValue, setFormValue] = useState('')
-    
-    // this is the actual randomization of the placeholder text from that array above.
-    const [placeholder, setPlaceholder] = useState(null)
-    function getPlaceholder(arr){
-        return Math.random()* (arr.length - 1) + 1;
-    }
-    setPlaceholder(getPlaceholder(placeholders));
-
+    const [phind, setPhind] = useState(Math.floor(Math.random()*placeholders.length));
     //handle the form
     function formHandler(e){
         setFormValue(e.target.value);
@@ -21,13 +13,12 @@ function TodoForm (props) {
     function handleSubmit(e){
         e.prventDefault();
         setFormValue("")
-        setPlaceholder(getPlaceholder(placeholders));
     }
 
     return(
         <div className="formWrapper">
             <form onSubmit={handleSubmit}>
-                <input type="text" name="todoItem" placeholder={placeholders[placeholder]} onChange={formHandler} value={formValue}/>
+                <input type="text" name="todoItem" placeholder={placeholders[phind]} onChange={formHandler} value={formValue}/>
                 <button>Add</button>
             </form>
         </div>
