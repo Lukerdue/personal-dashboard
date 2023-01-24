@@ -3,14 +3,19 @@ import { todoReducer, initialState } from './reducers/todoReducer';
 import './App.css';
 import TodoForm from './components/todoForm';
 import TodoList from './components/todoList';
+import { clearCompleted, toggleEdit } from './actions/index';
 
 function App() {
   const [state, dispatch] = useReducer(todoReducer, initialState)
   
   function handleToggle (e){
     e.preventDefault();
-    e.stopPropagation();
-    dispatch({ type: "TOGGLE_EDIT" });
+    dispatch(toggleEdit());
+  }
+
+  function handleClear(e){
+    e.preventDefault();
+    dispatch(clearCompleted());
   }
   
   return (
@@ -24,6 +29,7 @@ function App() {
           <TodoForm dispatch={dispatch}/>
         </div>)}
         <button onClick={handleToggle}>Edit List</button>
+        <button onClick={handleClear}>Clear Completed Tasks</button>
     </div>
   );
 }
