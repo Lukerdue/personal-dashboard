@@ -21,7 +21,7 @@ function App() {
           <TodoList state={state} dispatch={dispatch} />
         </div>) : (
         <div>
-          <TodoForm/>
+          <TodoForm dispatch={dispatch}/>
         </div>)}
         <button onClick={handleToggle}>Edit List</button>
     </div>
