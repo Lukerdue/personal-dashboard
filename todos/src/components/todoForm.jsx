@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { addTodo } from '../actions/index'
 
 //this is to randomize the placeholder every time it renders
 const placeholders = ['Do the dishes', 'learn react', 'apply for jobs', 'Workout', 'bathe the cat', 'plan Pathfinder', 'shave a peach'];
-
 
 function TodoForm (props) {
     const { dispatch } = props;
@@ -14,7 +14,7 @@ function TodoForm (props) {
     }
     function handleSubmit(e){
         e.preventDefault();
-        dispatch({type: "ADD_TODO", payload: {text: formValue, id: Math.floor(Math.random()*100)}});
+        dispatch(addTodo(formValue));
     }
 
     return(
