@@ -11,8 +11,10 @@ function Todo(props){
     }
 
     return(
-        <TodoStyled onClick={handleComplete} className={(todo.completed ? "completed" : "")}>
-            <p>{todo.text}</p>
+        <TodoStyled onClick={handleComplete}>
+            <div  className={(todo.completed ? "completed" : "")}>
+                <p>{todo.text}</p>
+            </div>
         </TodoStyled>)
 }
 export default Todo
