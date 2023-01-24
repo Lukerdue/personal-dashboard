@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 //this is to randomize the placeholder every time it renders
 const placeholders = ['Do the dishes', 'learn react', 'apply for jobs', 'Workout', 'bathe the cat', 'plan Pathfinder', 'shave a peach'];
 
-function TodoForm () {
-
+function TodoForm (props) {
+    
     const [formValue, setFormValue] = useState('')
     
     // this is the actual randomization of the placeholder text from that array above.
