@@ -14,9 +14,9 @@ export const TodoStyled = styled.div`
     }
     .completed{
         border-radius: 31px;
-        background: #d7ffc2;
-        box-shadow: inset -12px -12px 31px #accc9b,
-            inset 12px 12px 31px #ffffe9;
+        background: linear-gradient(315deg, #eaeaea, #c5c5c5);
+        box-shadow:  -12px -12px 31px #afafaf,
+             12px 12px 31px #ffffff;
         color: gray;
         text-decoration: line-through;
     }

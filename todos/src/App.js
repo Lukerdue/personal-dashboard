@@ -20,7 +20,7 @@ function App() {
   
   return (
     <div className="App">
-      
+      <i class="fa-regular fa-pen-to-square" onClick={handleToggle}></i>
       {!state.editing ? (
         <div>
           <TodoList state={state} dispatch={dispatch} />
@@ -28,8 +28,8 @@ function App() {
         <div>
           <TodoForm dispatch={dispatch}/>
         </div>)}
-        <button onClick={handleToggle}>Edit List</button>
-        <button onClick={handleClear}>Clear Completed Tasks</button>
+        
+        {state.editing ? ("") : (<button onClick={handleClear}>Clear Completed Tasks</button>)}
     </div>
   );
 }
