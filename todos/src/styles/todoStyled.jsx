@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const TodoStyled = styled.div`
       width: 20%;
+      text-align: center;
     div{
         padding: 20px 30px;
         color: #4d4d4d;
