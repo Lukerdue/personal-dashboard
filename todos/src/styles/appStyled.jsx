@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const AppStyled = styled.div`
     display: flex;
     flex-direction: column;
-    
+    color: #ededed;
     .main{
         padding: 0 100px;
     }

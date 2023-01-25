@@ -1,14 +1,18 @@
 import React from 'react';
 import { HeaderStyled } from '../styles/headerStyled';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserAstronaut } from '@fortawesome/free-solid-svg-icons';
 
 function Header () {
 
     return(<HeaderStyled>
         <div className='header-wrapper'>
-            <h1>A Pretty Good To-do List</h1>
-            <h3>At least, I think so</h3>
+            <a className="logo" href="#">
+            <FontAwesomeIcon icon={faUserAstronaut}/>
+            <h1>Seize The Day</h1>
+            </a>
         </div>
-        <div className="border"/>
+
     </HeaderStyled>)
 
 }

@@ -23,7 +23,7 @@ function App() {
   }
   
   return (
-    <AppStyled className="App">
+    <AppStyled>
       <Header/>
       <div className="main">
         <div className="controls">

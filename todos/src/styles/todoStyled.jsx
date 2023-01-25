@@ -6,19 +6,19 @@ export const TodoStyled = styled.div`
       text-align: center;
     div{
         padding: 20px 30px;
-        color: #4d4d4d;
+        color: #ededed;
         margin: 30px 10px;
-        border-radius: 31px;
-        background: linear-gradient(315deg, #e3e3e3, #bfbfbf);
-        box-shadow:  -12px -12px 31px #aaaaaa,
-             12px 12px 31px #fefefe;
+        border-radius: 50px;
+        background: #262626;
+        box-shadow:  20px 20px 24px #202020,
+             -20px -20px 24px #2c2c2c;
     }
     .completed{
-        border-radius: 31px;
-        background: linear-gradient(315deg, #eaeaea, #c5c5c5);
-        box-shadow:  -12px -12px 31px #afafaf,
-             12px 12px 31px #ffffff;
-        color: gray;
+        border-radius: 50px;
+    background: #262626;
+    box-shadow: inset 20px 20px 24px #202020,
+            inset -20px -20px 24px #2c2c2c;
+        color: lightgray;
         text-decoration: line-through;
     }
 `
