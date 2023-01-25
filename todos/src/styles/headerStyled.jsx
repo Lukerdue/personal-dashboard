@@ -55,7 +55,9 @@ export const HeaderStyled = styled.header`
     padding: 20px 100px 20px 100px;
     }
     h1{
-        font-size: 28px;
+        font-size: 38px;
+        font-family: 'Lobster Two', cursive;
+
     }
     h3{
         font-weight: 300;
