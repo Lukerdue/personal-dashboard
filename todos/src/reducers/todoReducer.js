@@ -16,7 +16,6 @@ export const todoReducer = ( state, action ) => {
                 editing: !state.editing
             };
         case "ADD_TODO":
-            console.log(action.payload)
             return {...state,
             editing: false,
             todos: [...state.todos, 

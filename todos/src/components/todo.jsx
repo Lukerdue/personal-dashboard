@@ -6,7 +6,6 @@ function Todo(props){
     const { dispatch, todo} = props;
 
     function handleComplete(){
-        console.log("click")
         dispatch(toggleComplete(todo.id))
     }
 
