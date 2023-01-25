@@ -8,11 +8,7 @@ export const AppStyled = styled.div`
     .main{
         padding: 0 100px;
     }
-    .controls{
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-    }
+
     .controls svg{
         padding: 0 15px;
         height: 1.15em;

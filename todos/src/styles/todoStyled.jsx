@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const TodoStyled = styled.div`
-      width: 20%;
+      width: 100%;
       text-align: center;
     div{
         padding: 20px 30px;
         color: #ededed;
-        margin: 30px 10px;
+        margin: 15px 10px;
         border-radius: 50px;
         background: #262626;
         box-shadow:  20px 20px 24px #202020,
