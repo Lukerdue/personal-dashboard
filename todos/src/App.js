@@ -14,13 +14,7 @@ function App() {
     <AppStyled>
       <Header/>
       <div className="main"> 
-        {!state.editing ? (
-        <div>
-          <TodoList state={state} dispatch={dispatch} />
-        </div>) : (
-        <div>
-          <TodoForm dispatch={dispatch}/>
-        </div>)}
+        <TodoList state={state} dispatch={dispatch}/>
       </div>
     </AppStyled>
   );

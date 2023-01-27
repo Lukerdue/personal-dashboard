@@ -5,6 +5,7 @@ import { clearCompleted, toggleEdit } from '../actions/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { Tooltip } from 'react-tooltip';
+import TodoForm from './todoForm';
 
 function TodoList(props){
     const { state, dispatch } = props;
@@ -25,16 +26,25 @@ function TodoList(props){
                 <div className="list-header">
                 <div className="list-desc">
                     <h2>Your Tasks</h2>
-                    <p>Tap to complete</p>
+                    {!state.editing ? (<p>Tap to complete</p>) : ("")}
                 </div>
                 <div className="controls">
           <FontAwesomeIcon id="add-task" icon={faPenToSquare} onClick={handleToggle} alt="Add new task"/>
           {state.editing ? ("") : (<FontAwesomeIcon id="clear-complete" icon={faTrashCan} onClick={handleClear} alt="Clear completed tasks"/>)}
         </div>
-        </div>
+        </div>{!state.editing ? (
                 <div className="list-todos">
                     {state.todos.map(todo=>{return <Todo dispatch={dispatch} todo={todo} key={todo.id}/>})}
-                </div>
+                </div>) : (
+                    <div>
+                        <div className="list-form">
+                            <TodoForm dispatch={dispatch} />
+                        </div>
+                        <div className="list-todos adding">
+                            {state.todos.map(todo=>{return <Todo dispatch={dispatch} todo={todo} key={todo.id}/>})}
+                        </div>
+                    </div>
+                )}
             </div>
             <Tooltip anchorId="clear-complete" content="Clear Completed Tasks" place="bottom" effect="static"/>
             <Tooltip anchorId="add-task" content={!state.editing ? "Add A new Task" : "Cancel"} place="bottom" effect="static"/>

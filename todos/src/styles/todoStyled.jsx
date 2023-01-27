@@ -21,4 +21,5 @@ export const TodoStyled = styled.div`
         color: lightgray;
         text-decoration: line-through;
     }
+
 `
