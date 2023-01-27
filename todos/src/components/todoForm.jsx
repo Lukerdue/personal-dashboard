@@ -18,10 +18,18 @@ function TodoForm (props) {
         dispatch(addTodo(formValue));
     }
 
+    function handleBlur(e){
+        e.target.classList.add('input-focus-out');
+    }
+    //This cleans up the blur function if you click the element again
+    function handleClick(e){
+        e.target.classList.remove('input-focus-out');
+    }
+
     return(
         <TodoFormStyled>
             <form onSubmit={handleSubmit}>
-                <input type="text" name="todoItem" placeholder={placeholders[phind]} onChange={formHandler} value={formValue}/>
+                <input type="text" name="todoItem" onClick={handleClick} placeholder={placeholders[phind]} onBlur={handleBlur} onChange={formHandler} value={formValue}/>
                 <button>Add</button>
             </form>
         </TodoFormStyled>

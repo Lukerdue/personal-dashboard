@@ -8,4 +8,28 @@ export const TodoFormStyled = styled.div`
     padding: 20px;
     border-bottom: 1px solid #f09;
     margin-bottom: 2px;
+
+    @keyframes borderfade {
+        0%{
+            border-bottom: 2px solid #adadad;
+        }
+        100%{
+            border-bottom: 2px solid #f09;
+        }
+    }
+    input[type=text]{
+        padding: 5px;
+        border: none;
+        border-bottom: 2px solid #adadad;
+        background-color: transparent;
+        color: #ededed;
+    }
+    input[type=text]:focus{
+        animation: borderfade .5s ease-in-out;
+        border-bottom: 2px solid #f09;
+    }
+    .input-focus-out{
+        animation: borderfade .5s ease-in-out;
+        animation-direction: reverse;
+    }
 `
