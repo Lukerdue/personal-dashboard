@@ -40,4 +40,8 @@ export const TodoListStyled = styled.div`
         justify-content: flex-end;
         width: 38%;
     }
+    .adding{
+        border-top: 1px solid #ededed;
+        margin-top: 1px;
+    }
 `
