@@ -26,10 +26,11 @@ export const TodoFormStyled = styled.div`
     }
     input[type=text]:focus{
         animation: borderfade .5s ease-in-out;
-        border-bottom: 2px solid #f09;
+        animation-fill-mode: forwards;
     }
-    .input-focus-out{
+    .input-blur{
         animation: borderfade .5s ease-in-out;
         animation-direction: reverse;
+        animation-fill-mode: forwards;
     }
 `
