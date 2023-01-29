@@ -1,6 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
+function checkAnimation(state){
+    if(state === "off"){
+        return (`animation: borderfade .3s ease-in-out;
+        animation-fill-mode: forwards;`)
+    }else if (state === "on"){
+        return (`animation: borderfade .3s ease-in-out;
+        animation-direction: backwards;
+        animation-fill-mode: forwards;`)
+    } else {return('')}
+}
+
 export const TodoFormStyled = styled.div`
     display: flex;
     align-items: center;
@@ -8,7 +19,9 @@ export const TodoFormStyled = styled.div`
     padding: 20px;
     border-bottom: 1px solid #f09;
     margin-bottom: 2px;
+`
 
+export const InputStyled = styled.input`
     @keyframes borderfade {
         0%{
             border-bottom: 2px solid #adadad;
@@ -17,20 +30,10 @@ export const TodoFormStyled = styled.div`
             border-bottom: 2px solid #f09;
         }
     }
-    input[type=text]{
         padding: 5px;
         border: none;
         border-bottom: 2px solid #adadad;
         background-color: transparent;
         color: #ededed;
-    }
-    input[type=text]:focus{
-        animation: borderfade .5s ease-in-out;
-        animation-fill-mode: forwards;
-    }
-    .input-blur{
-        animation: borderfade .5s ease-in-out;
-        animation-direction: reverse;
-        animation-fill-mode: forwards;
-    }
+        ${checkAnimation(this.props)}
 `
