@@ -1,16 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function checkAnimation(state){
-    if(state === "off"){
-        return (`animation: borderfade .3s ease-in-out;
-        animation-fill-mode: forwards;`)
-    }else if (state === "on"){
-        return (`animation: borderfade .3s ease-in-out;
-        animation-direction: backwards;
-        animation-fill-mode: forwards;`)
-    } else {return('')}
-}
 
 export const TodoFormStyled = styled.div`
     display: flex;
@@ -35,5 +25,18 @@ export const InputStyled = styled.input`
         border-bottom: 2px solid #adadad;
         background-color: transparent;
         color: #ededed;
-        ${checkAnimation(this.props)}
+        ${props => {
+            console.log(props.animate)
+            if(props.animate === "on"){
+                return(`animation: borderfade .3s ease-in-out;
+                animation-fill-mode: forwards;
+                animation-direction: forwards;`)
+            } else if(props.animate === "off"){
+                return(`animation: borderfade .3s ease-in-out;
+                animation-fill-mode: forwards;
+                animation-direction: backwards;`)
+            }else{
+                return("")
+            }
+        }}
 `
