@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const TodoStyled = styled.div`
+    cursor: pointer;
       width: 100%;
       text-align: center;
     div{

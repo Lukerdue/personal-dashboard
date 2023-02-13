@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { addTodo } from '../actions/index';
-import { TodoFormStyled, InputStyled } from '../styles/todoFormStyled';
+import { TodoFormStyled } from '../styles/todoFormStyled';
 
 //this is to randomize the placeholder every time it renders
 const placeholders = ['Do the dishes', 'learn react', 'apply for jobs', 'Workout', 'bathe the cat', 'plan Pathfinder', 'shave a peach'];
@@ -9,7 +9,7 @@ function TodoForm (props) {
     const { dispatch } = props;
     const [formValue, setFormValue] = useState('')
     const [phind, setPhind] = useState(Math.floor(Math.random()*placeholders.length));//just to render a random placeholder when the form renders
-    const [animate, setAnimate] = useState('') //this state is literally just so the css animation will run multiple times
+    const [animate, setAnimate] = useState("") //this state is literally just so the css animation will run multiple times
     
     //handle the form
     function formHandler(e){
@@ -21,16 +21,16 @@ function TodoForm (props) {
     }
     //handle animation state change
     function handleAnimateFocus(e){
-        setAnimate("on");
+        setAnimate("true");
     }
     function handleAnimateBlur(e){
-        setAnimate("off");
+        setAnimate("false");
     }
 
     return(
         <TodoFormStyled>
             <form onSubmit={handleSubmit}>
-                <InputStyled animate={animate} type="text" name="todoItem" onClick={handleAnimateFocus} placeholder={placeholders[phind]} onBlur={handleAnimateBlur} onChange={formHandler} value={formValue}/>
+                <input type="text" name="todoItem" onClick={handleAnimateFocus} placeholder={placeholders[phind]} onBlur={handleAnimateBlur} onChange={formHandler} value={formValue}/>
                 <button>Add</button>
             </form>
         </TodoFormStyled>

@@ -9,9 +9,6 @@ export const TodoFormStyled = styled.div`
     padding: 20px;
     border-bottom: 1px solid #f09;
     margin-bottom: 2px;
-`
-
-export const InputStyled = styled.input`
     @keyframes borderfade {
         0%{
             border-bottom: 2px solid #adadad;
@@ -20,23 +17,15 @@ export const InputStyled = styled.input`
             border-bottom: 2px solid #f09;
         }
     }
+    input{
         padding: 5px;
         border: none;
         border-bottom: 2px solid #adadad;
         background-color: transparent;
         color: #ededed;
-        ${props => {
-            console.log(props.animate)
-            if(props.animate === "on"){
-                return(`animation: borderfade .3s ease-in-out;
-                animation-fill-mode: forwards;
-                animation-direction: forwards;`)
-            } else if(props.animate === "off"){
-                return(`animation: borderfade .3s ease-in-out;
-                animation-fill-mode: forwards;
-                animation-direction: backwards;`)
-            }else{
-                return("")
-            }
-        }}
+    }
+    input:focus{
+        animation: borderfade .3s ease-in-out;
+        animation-fill-mode: forwards;
+    }
 `
