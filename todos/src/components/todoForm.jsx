@@ -22,9 +22,13 @@ function TodoForm (props) {
     //handle animation state change
     function handleAnimateFocus(e){
         setAnimate("true");
+        e.target.classList.add('target')
     }
     function handleAnimateBlur(e){
         setAnimate("false");
+        e.target.classList.remove('target')
+        //I need to change the state of the input for the animation to trigger
+        
     }
 
     return(

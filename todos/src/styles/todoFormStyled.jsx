@@ -24,8 +24,12 @@ export const TodoFormStyled = styled.div`
         background-color: transparent;
         color: #ededed;
     }
-    input:focus{
+    .target{
         animation: borderfade .3s ease-in-out;
         animation-fill-mode: forwards;
+    }
+    .untarget{
+        animation: borderfade .3s ease-in-out;
+        animation-direction: backwards;
     }
 `
