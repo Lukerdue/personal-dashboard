@@ -32,4 +32,17 @@ export const TodoFormStyled = styled.div`
         animation: borderfade .3s ease-in-out;
         animation-direction: backwards;
     }
+    button{
+        margin-left: 15px;
+        color: #ededed;
+        padding: 10px 30px;
+        background: #262626;
+        box-shadow:  20px 20px 24px #202020,
+             -20px -20px 24px #303030;
+        border-radius: 20px;
+        border: none;
+    }
+    button:hover{
+        cursor: pointer;
+    }
 `
