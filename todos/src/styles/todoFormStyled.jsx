@@ -37,7 +37,7 @@ export const TodoFormStyled = styled.div`
         color: #ededed;
         padding: 10px 30px;
         background: #262626;
-        box-shadow:  20px 20px 24px #202020,
+        box-shadow:  20px 20px 24px #1d1d1d,
              -20px -20px 24px #303030;
         border-radius: 20px;
         border: none;

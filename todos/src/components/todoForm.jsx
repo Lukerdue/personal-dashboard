@@ -3,7 +3,7 @@ import { addTodo } from '../actions/index';
 import { TodoFormStyled } from '../styles/todoFormStyled';
 
 //this is to randomize the placeholder every time it renders
-const placeholders = ['Do the dishes', 'learn react', 'apply for jobs', 'Workout', 'bathe the cat', 'plan Pathfinder', 'shave a peach'];
+const placeholders = ['Do the dishes', 'Update my Resume', 'Workout', 'Bathe the Cat', 'Text a Friend', 'Shave a Peach', 'Vacuum the Ceiling', 'Make Dinner', 'Facetime Mom', 'Make that Appointment', 'Eat Healthy', 'Drink water', 'Wash the comfort water bottle'];
 
 function TodoForm (props) {
     const { dispatch } = props;
