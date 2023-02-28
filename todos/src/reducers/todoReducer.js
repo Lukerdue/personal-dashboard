@@ -1,5 +1,5 @@
-//Reducers are functions that take in two objects - the current state,
-// and an acction object and "reduces" them to a single object, the new state, and returns that new object.
+import { useLocalStorage } from './useLocalStorage';
+
 export const initialState = {
     editing: false,
     todos: [
@@ -16,7 +16,7 @@ export const todoReducer = ( state, action ) => {
                 editing: !state.editing
             };
         case "ADD_TODO":
-            return {...state,
+            const newstate = {...state,
             editing: false,
             todos: [...state.todos, 
                     {text: action.payload, 
@@ -24,7 +24,8 @@ export const todoReducer = ( state, action ) => {
                     completed: false
                     }
                 ]
-            };
+            }
+            return newstate;
         case "CLEAR_COMPLETED":
             return {...state,
                 todos: state.todos.filter(todo =>{return todo.completed === false})
