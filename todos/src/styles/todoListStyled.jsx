@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const TodoListStyled = styled.div`
     border: 1px solid #f09;
-    width: fit-content;
+    width: 25%;
     border-radius: 10px;
     padding: 2px;
 
@@ -13,7 +13,6 @@ export const TodoListStyled = styled.div`
         font-family: 'Poppins', sans-serif;
         padding-bottom: 5px;
         padding: 10px;
-        width: 300px;
         display: flex;
         align-items: flex-start;
     }
