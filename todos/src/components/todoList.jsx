@@ -32,17 +32,16 @@ function TodoList(){
     
       function handleClear(e){
         e.preventDefault();
-        const cleared = todos.filter(todo=> todo.completed === false);
-        setTodos([...cleared]);
+        setTodos(todos.filter(todo=> todo.completed === false));
       }
       function handleComplete(e){
-        e.preventDefault();
+        console.log(e.target)
         const findandcomplete = todos.map(todo=>{
             if(e.target.id === todo.id){
                 return {...todo, completed: true}
             } else {
                 return todo
-            }});
+            }})
         setTodos(findandcomplete);
       }
 
@@ -60,14 +59,14 @@ function TodoList(){
         </div>
         </div>{!editing ? (
                 <div className="list-todos">
-                    {todos.map(todo=>{return <Todo todo={todo} id={todo.id} key={todo.id} onClick={handleComplete}/>})}
+                    {todos.map(todo=>{return <Todo todo={todo} key={todo.id} handleComplete={handleComplete}/>})}
                 </div>) : (
                     <div>
                         <div className="list-form">
                             <TodoForm />
                         </div>
                         <div className="list-todos adding">
-                            {todos.map(todo=>{return <Todo todo={todo} id={todo.id} key={todo.id} onClick={handleComplete}/>})}
+                            {todos.map(todo=>{return <Todo todo={todo} key={todo.id} handleComplete={handleComplete}/>})}
                         </div>
                     </div>
                 )}
