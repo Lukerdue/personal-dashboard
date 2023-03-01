@@ -1,23 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import Todo from './todo';
 import { TodoListStyled } from '../styles/todoListStyled';
-import { clearCompleted, toggleEdit } from '../actions/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { Tooltip } from 'react-tooltip';
 import TodoForm from './todoForm';
+import { useLocalStorage } from "../util/useLocalStorage";
 
-function TodoList(props){
-    const { state, dispatch } = props;
+
+const initialTodos = [
+    {text: 'Walk the Dog',
+     id: 13,
+     completed: false},
+    {text: 'Clean Out the Fridge',
+     id: 14,
+     completed: false},
+    {text: 'Do the Dishes',
+     id: 15,
+     completed: false}]
+
+function TodoList(){
+    const [editing, setEditing] = useState(false);
+    const [todos, setTodos] = useLocalStorage('todos', initialTodos);
+
+    console.log(todos);
 
     function handleToggle (e){
         e.preventDefault();
-        dispatch(toggleEdit());
+        setEditing(!editing);
       }
     
       function handleClear(e){
         e.preventDefault();
-        dispatch(clearCompleted());
+        const cleared = todos.filter(todo=> todo.completed === false);
+        setTodos([...cleared]);
+      }
+      function handleComplete(e){
+        e.preventDefault();
+        const findandcomplete = todos.map(todo=>{
+            if(e.target.id === todo.id){
+                return {...todo, completed: true}
+            } else {
+                return todo
+            }});
+        setTodos(findandcomplete);
       }
 
     return(
@@ -26,28 +52,28 @@ function TodoList(props){
                 <div className="list-header">
                 <div className="list-desc">
                     <h2>Your Tasks</h2>
-                    {!state.editing ? (<p>Tap to complete</p>) : ("")}
+                    {!editing ? (<p>Tap to complete</p>) : ("")}
                 </div>
                 <div className="controls">
           <FontAwesomeIcon id="add-task" icon={faPenToSquare} onClick={handleToggle} alt="Add new task"/>
-          {state.editing ? ("") : (<FontAwesomeIcon id="clear-complete" icon={faTrashCan} onClick={handleClear} alt="Clear completed tasks"/>)}
+          {editing ? ("") : (<FontAwesomeIcon id="clear-complete" icon={faTrashCan} onClick={handleClear} alt="Clear completed tasks"/>)}
         </div>
-        </div>{!state.editing ? (
+        </div>{!editing ? (
                 <div className="list-todos">
-                    {state.todos.map(todo=>{return <Todo dispatch={dispatch} todo={todo} key={todo.id}/>})}
+                    {todos.map(todo=>{return <Todo todo={todo} id={todo.id} key={todo.id} onClick={handleComplete}/>})}
                 </div>) : (
                     <div>
                         <div className="list-form">
-                            <TodoForm dispatch={dispatch} />
+                            <TodoForm />
                         </div>
                         <div className="list-todos adding">
-                            {state.todos.map(todo=>{return <Todo dispatch={dispatch} todo={todo} key={todo.id}/>})}
+                            {todos.map(todo=>{return <Todo todo={todo} id={todo.id} key={todo.id} onClick={handleComplete}/>})}
                         </div>
                     </div>
                 )}
             </div>
             <Tooltip anchorId="clear-complete" content="Clear Completed Tasks" place="bottom" effect="static"/>
-            <Tooltip anchorId="add-task" content={!state.editing ? "Add A new Task" : "Cancel"} place="bottom" effect="static"/>
+            <Tooltip anchorId="add-task" content={!editing ? "Add A new Task" : "Cancel"} place="bottom" effect="static"/>
         </TodoListStyled>)
 }
 export default TodoList

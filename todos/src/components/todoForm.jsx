@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { addTodo } from '../actions/index';
 import { TodoFormStyled } from '../styles/todoFormStyled';
 
 //this is to randomize the placeholder every time it renders
 const placeholders = ['Do the dishes', 'Update my Resume', 'Workout', 'Bathe the Cat', 'Text a Friend', 'Shave a Peach', 'Vacuum the Ceiling', 'Make Dinner', 'Facetime Mom', 'Make that Appointment', 'Eat Healthy', 'Drink water', 'Wash the comfort water bottle'];
 
-function TodoForm (props) {
-    const { dispatch } = props;
+function TodoForm () {
     const [formValue, setFormValue] = useState('')
     const [phind, setPhind] = useState(Math.floor(Math.random()*placeholders.length));//just to render a random placeholder when the form renders
     const [animate, setAnimate] = useState("") //this state is literally just so the css animation will run multiple times
@@ -17,7 +15,7 @@ function TodoForm (props) {
     }
     function handleSubmit(e){
         e.preventDefault();
-        dispatch(addTodo(formValue));
+        // dispatch(addTodo(formValue));
     }
     //handle animation state change
     function handleAnimateFocus(e){
