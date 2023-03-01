@@ -23,8 +23,6 @@ function TodoList(){
     const [editing, setEditing] = useState(false);
     const [todos, setTodos] = useLocalStorage('todos', initialTodos);
 
-    console.log(todos);
-
     function handleToggle (e){
         e.preventDefault();
         setEditing(!editing);
@@ -36,8 +34,13 @@ function TodoList(){
       }
 
       function toggleCompleted(completed){
-        console.log(completed)
         setTodos(todos.map(todo=>{if(completed.id === todo.id){return completed}else{return todo}}));
+      }
+
+      function handleAddTodo(newTodo){
+        const newList = [...todos, newTodo]
+        setTodos(newList)
+        setEditing(false);
       }
 
     return(
@@ -58,7 +61,7 @@ function TodoList(){
                 </div>) : (
                     <div>
                         <div className="list-form">
-                            <TodoForm />
+                            <TodoForm handleAddTodo={handleAddTodo}/>
                         </div>
                         <div className="list-todos adding">
                             {todos.map(todo=>{return <Todo toggleCompleted={toggleCompleted} todo={todo} key={todo.id}/>})}
