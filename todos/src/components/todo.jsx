@@ -1,17 +1,15 @@
 import React from 'react';
-import { toggleComplete } from '../actions/index';
 import { TodoStyled } from '../styles/todoStyled';
 
-function Todo(props){
-    const { dispatch, todo} = props;
-
-    function handleComplete(){
-        dispatch(toggleComplete(todo.id))
+function Todo( props ){
+    const { todo, toggleCompleted } = props;
+    function handleComplete(e){
+        e.preventDefault();
+        toggleCompleted({...todo, completed: !todo.completed})
     }
-
     return(
-        <TodoStyled onClick={handleComplete}>
-            <div  className={(todo.completed ? "completed" : "")}>
+        <TodoStyled >
+            <div id={todo.id} onClick={handleComplete} className={(todo.completed ? "completed" : "")}>
                 <p>{todo.text}</p>
             </div>
         </TodoStyled>)

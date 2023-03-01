@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
 export const TodoFormStyled = styled.div`
     display: flex;
     align-items: center;
@@ -8,7 +9,6 @@ export const TodoFormStyled = styled.div`
     padding: 20px;
     border-bottom: 1px solid #f09;
     margin-bottom: 2px;
-
     @keyframes borderfade {
         0%{
             border-bottom: 2px solid #adadad;
@@ -17,19 +17,32 @@ export const TodoFormStyled = styled.div`
             border-bottom: 2px solid #f09;
         }
     }
-    input[type=text]{
+    input{
         padding: 5px;
         border: none;
         border-bottom: 2px solid #adadad;
         background-color: transparent;
         color: #ededed;
     }
-    input[type=text]:focus{
-        animation: borderfade .5s ease-in-out;
-        border-bottom: 2px solid #f09;
+    .target{
+        animation: borderfade .3s ease-in-out;
+        animation-fill-mode: forwards;
     }
-    .input-focus-out{
-        animation: borderfade .5s ease-in-out;
-        animation-direction: reverse;
+    .untarget{
+        animation: borderfade .3s ease-in-out;
+        animation-direction: backwards;
+    }
+    button{
+        margin-left: 15px;
+        color: #ededed;
+        padding: 10px 30px;
+        background: #262626;
+        box-shadow:  20px 20px 24px #1d1d1d,
+             -20px -20px 24px #303030;
+        border-radius: 20px;
+        border: none;
+    }
+    button:hover{
+        cursor: pointer;
     }
 `
