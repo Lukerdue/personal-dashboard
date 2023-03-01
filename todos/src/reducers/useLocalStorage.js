@@ -10,7 +10,7 @@ export const useLocalStorage = (key, initialvalue) => {
         } else if(window.localStorage.getItem(key) === 'undefined') {
             window.localStorage.setItem(key, initialvalue)
             return JSON.stringify(window.localStorage.getItem(key))
-        }}}catch{
+        }}}catch(error){
             console.log(error)
         }
     })
@@ -25,7 +25,7 @@ export const useLocalStorage = (key, initialvalue) => {
                 window.localStorage.setItem(key, JSON.stringify(valueToStore));
             }
         }
-        catch {
+        catch(error){
             console.log(error);
         }
     }
