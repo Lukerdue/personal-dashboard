@@ -34,15 +34,10 @@ function TodoList(){
         e.preventDefault();
         setTodos(todos.filter(todo=> todo.completed === false));
       }
-      function handleComplete(e){
-        console.log(e.target)
-        const findandcomplete = todos.map(todo=>{
-            if(e.target.id === todo.id){
-                return {...todo, completed: true}
-            } else {
-                return todo
-            }})
-        setTodos(findandcomplete);
+
+      function toggleCompleted(completed){
+        console.log(completed)
+        setTodos(todos.map(todo=>{if(completed.id === todo.id){return completed}else{return todo}}));
       }
 
     return(
@@ -59,14 +54,14 @@ function TodoList(){
         </div>
         </div>{!editing ? (
                 <div className="list-todos">
-                    {todos.map(todo=>{return <Todo todo={todo} key={todo.id} handleComplete={handleComplete}/>})}
+                    {todos.map(todo=>{return <Todo toggleCompleted={toggleCompleted} todo={todo} key={todo.id}/>})}
                 </div>) : (
                     <div>
                         <div className="list-form">
                             <TodoForm />
                         </div>
                         <div className="list-todos adding">
-                            {todos.map(todo=>{return <Todo todo={todo} key={todo.id} handleComplete={handleComplete}/>})}
+                            {todos.map(todo=>{return <Todo toggleCompleted={toggleCompleted} todo={todo} key={todo.id}/>})}
                         </div>
                     </div>
                 )}
