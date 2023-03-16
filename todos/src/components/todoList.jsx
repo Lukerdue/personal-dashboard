@@ -39,7 +39,7 @@ function TodoList(){
 
       function handleAddTodo(newTodo){
         const newList = [...todos, newTodo]
-        setTodos(newList)
+        setTodos(newList);
         setEditing(false);
       }
 
