@@ -1,5 +1,5 @@
 import React from 'react';
-import { TodoStyled } from '../styles/todoStyled';
+import { TodoStyled } from '../../styles/todoStyles/todoStyled';
 
 function Todo( props ){
     const { todo, toggleCompleted } = props;

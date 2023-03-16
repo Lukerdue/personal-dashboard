@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TodoFormStyled } from '../styles/todoFormStyled';
+import { TodoFormStyled } from '../../styles/todoStyles/todoFormStyled';
 
 //this is to randomize the placeholder every time it renders
 const placeholders = ['Do the dishes', 'Update my Resume', 'Workout', 'Bathe the Cat', 'Text a Friend', 'Shave a Peach', 'Vacuum the Ceiling', 'Make Dinner', 'Facetime Mom', 'Make that Appointment', 'Eat Healthy', 'Drink water', 'Wash the comfort water bottle'];
