@@ -5,6 +5,7 @@ export const HeaderStyled = styled.header`
     margin-bottom: 20px;
     background-color: #363636;
 
+    //for the neon flicker animation
     @keyframes pulsate {
   100% {
     /* Larger blur radius */
