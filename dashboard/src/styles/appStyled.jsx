@@ -13,4 +13,9 @@ export const AppStyled = styled.div`
         padding: 0 15px;
         height: 1.15em;
     }
+    @media only screen and (max-width: 550px){
+        .main{
+            padding: 0 30px;
+        }
+    }
 `

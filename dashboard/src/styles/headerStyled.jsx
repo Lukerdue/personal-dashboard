@@ -5,6 +5,7 @@ export const HeaderStyled = styled.header`
     margin-bottom: 20px;
     background-color: #363636;
 
+    //for the neon flicker animation
     @keyframes pulsate {
   100% {
     /* Larger blur radius */
@@ -67,4 +68,14 @@ export const HeaderStyled = styled.header`
     .border{
         height: 3px;
         background-image: linear-gradient(to right, #4ce09f, #76e28c, #99e37a, #b9e26c, #d8e062, #dbdf57, #dedd4c, #e2dc3f, #c7dd27, #a5df0d, #7be000, #36e006);    }
+
+        //mobile view
+        @media only screen and (max-width: 670px){
+            .header-wrapper{
+                padding: 20px 30px 20px 30px;
+            }
+            .logo{
+                width: 100%;
+            }
+        }
 `

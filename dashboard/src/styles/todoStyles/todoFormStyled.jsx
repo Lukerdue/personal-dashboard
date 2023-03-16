@@ -45,4 +45,15 @@ export const TodoFormStyled = styled.div`
     button:hover{
         cursor: pointer;
     }
+
+    @media only screen and (max-width: 550px){
+        padding: 20px;
+        button{
+            margin-left: 10px;
+            padding: 5px 15px;
+            box-shadow: 10px 10px 14px #1d1d1d,
+                        -10px -10px 14px #303030;
+            border-radius: 15px;
+        }
+    }
 `

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Todo from './todo';
-import { TodoListStyled } from '../styles/todoListStyled';
+import { TodoListStyled } from '../../styles/todoStyles/todoListStyled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { Tooltip } from 'react-tooltip';
 import TodoForm from './todoForm';
-import { useLocalStorage } from "../util/useLocalStorage";
+import { useLocalStorage } from "../../util/useLocalStorage";
 
 
 const initialTodos = [
@@ -39,7 +39,7 @@ function TodoList(){
 
       function handleAddTodo(newTodo){
         const newList = [...todos, newTodo]
-        setTodos(newList)
+        setTodos(newList);
         setEditing(false);
       }
 

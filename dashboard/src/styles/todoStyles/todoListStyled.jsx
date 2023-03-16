@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export const TodoListStyled = styled.div`
     border: 1px solid #f09;
     width: 25%;
+    min-width: 350px;
     border-radius: 10px;
     padding: 2px;
 
@@ -42,5 +43,15 @@ export const TodoListStyled = styled.div`
     .adding{
         border-top: 1px solid #ededed;
         margin-top: 1px;
+    }
+    //Tablet View
+    @media only screen and (max-width: 850px){
+        width: 100%;
+    }
+
+    //Mobile View
+    @media only screen and (max-width: 550px){
+        min-width: auto;
+        
     }
 `
