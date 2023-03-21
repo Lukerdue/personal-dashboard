@@ -95,6 +95,9 @@ function CalculatorMod(){
                         <div className="number decimal">
                             <p>.</p>
                         </div>
+                        <div className="number percent">
+                            <p>%</p>
+                        </div>
                     </div>
                 </div>
             </div>

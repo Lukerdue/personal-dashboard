@@ -9,20 +9,20 @@ export const CalculatorStyled = styled.div`
     padding: 2px;
     .inner{
         border: 1px solid darkgray;
-        border-radius: 10px;
+        border-radius: 8px;
     }
     .buttons{
         height: 300px;
         padding: 20px;
     }
     .row{
-        height: 8%;
+        height: 15%;
     }
     .number {
+        border-left: 1px solid gray;
         height: 100%;
         width: 25%;
         background: linear-gradient(gray, darkgray);
-        margin: 1px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -31,7 +31,18 @@ export const CalculatorStyled = styled.div`
         rotate: -90deg;
         width: fit-content;
     }
+    .backspace{
+        background: #a19e03;
+    }
     .zero {
-        width: 30%;
+        width: 50%;
+    }
+    .clear{
+        background: #034f59;
+        border-left: none;
+    }
+    .all{
+        background: #870343;
+        border-left: none;
     }
 `
