@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CalculatorStyled } from '../../styles/calculatorStyled';
 
 const emptyNumber = {number: 0, nextOperation: undefined}
 
@@ -21,7 +22,7 @@ function CalculatorMod(){
         //TODO: figure out how to add all the numbers together lol
     }
     
-    return (<div>
+    return (<CalculatorStyled>
         <div className="inner">
             <div className='history'>
                 {/* TODO: Store history in local storage. */}
@@ -38,7 +39,7 @@ function CalculatorMod(){
                         <div className="number clear">
                             <p>C</p>
                         </div>
-                        <div className="backspace">
+                        <div className="number backspace">
                             <p>^</p>
                         </div>
                         <div className="number add">
@@ -98,7 +99,7 @@ function CalculatorMod(){
                 </div>
             </div>
         </div>
-    </div>)
+    </CalculatorStyled>)
 }
 
 export default CalculatorMod
