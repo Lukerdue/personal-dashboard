@@ -27,6 +27,9 @@ export const CalculatorStyled = styled.div`
         align-items: center;
         justify-content: center;
     }
+    .number p:hover{
+        cursor: default;
+    }
     .backspace p{
         rotate: -90deg;
         width: fit-content;
