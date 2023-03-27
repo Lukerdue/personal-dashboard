@@ -10,12 +10,17 @@ function CalculatorMod(){
     //Calculation functions
     function addNumbers(e){
 
-        //TODO: check decimals before adding periods
+        if(e.target.id === "."){
+            console.log(Number.isInteger(parseFloat(currentNumber.number)))
+            if(Number.isInteger(parseFloat(currentNumber.number)) == true){
+                setCurrentNumber({...currentNumber, number: currentNumber.number + e.target.id})
+            }
+        } else{
         if(currentNumber.number === "0"){
             setCurrentNumber({...currentNumber, number: e.target.id})
         } else{
         setCurrentNumber({...currentNumber, number: currentNumber.number+e.target.id});
-        }
+        }}
     }
 
     function addOperation(e){
@@ -33,6 +38,7 @@ function CalculatorMod(){
 
     function allEquals(){
         //TODO: figure out how to add all the numbers together lol
+
     }
     
     return (<CalculatorStyled>
