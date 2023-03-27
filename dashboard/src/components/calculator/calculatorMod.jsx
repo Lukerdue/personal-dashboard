@@ -46,71 +46,71 @@ function CalculatorMod(){
                 </div>
                 <div className="buttons">
                     <div className="row">
-                        <div onClick={allClear} className="number all clear" name="allClear">
-                            <p>AC</p>
+                        <div onClick={allClear} className="number all clear" id="allClear">
+                            <p id="allclear">AC</p>
                         </div>
-                        <div onClick={clear} className="number clear" name="clear">
-                            <p>C</p>
+                        <div onClick={clear} className="number clear" id="clear">
+                            <p id="clear">C</p>
                         </div>
-                        <div className="number backspace" name="backspace">
-                            <p>^</p>
+                        <div className="number backspace" id="backspace">
+                            <p id="backspace">^</p>
                         </div>
-                        <div className="number add" name="+">
-                            <p>+</p>
+                        <div className="number add" id="+">
+                            <p id="+">+</p>
                         </div>
                     </div>
                     <div className="row">
                         <div onClick={addNumbers} className="number" id="7">
-                            <p>7</p>
+                            <p id="7">7</p>
                         </div>
                         <div onClick={addNumbers} className="number" id="8">
-                            <p>8</p>
+                            <p id="8">8</p>
                         </div>
                         <div onClick={addNumbers} className="number" id="9">
-                            <p>9</p>
+                            <p id="9">9</p>
                         </div>
-                        <div onClick={addOperation} className="number subtract" name="-">
-                            <p>-</p>
+                        <div onClick={addOperation} className="number subtract" id="-">
+                            <p id="-">-</p>
                         </div>
                     </div>
                     <div className="row">
                         <div onClick={addNumbers} className="number" id="4">
-                            <p>4</p>
+                            <p id="4">4</p>
                         </div>
                         <div onClick={addNumbers} className="number" id="5">
-                            <p>5</p>
+                            <p id="5">5</p>
                         </div>
                         <div onClick={addNumbers} className="number" id="6">
-                            <p>6</p>
+                            <p id="6">6</p>
                         </div>
-                        <div onClick={addOperation} className="number multiply" name="*">
-                            <p>x</p>
+                        <div onClick={addOperation} className="number multiply" id="*">
+                            <p id="*">x</p>
                         </div>
                     </div>
                     <div className="row">
                         <div onClick={addNumbers} className="number" id="1">
-                            <p>1</p>
+                            <p id="1">1</p>
                         </div>
                         <div onClick={addNumbers} className="number" id="2">
-                            <p>2</p>
+                            <p id="2">2</p>
                         </div>
                         <div onClick={addNumbers} className="number" id="3">
-                            <p>3</p>
+                            <p id="3">3</p>
                         </div>
-                        <div onClick={addOperation} className="number divide" name="/">
-                            <p>÷</p>
+                        <div onClick={addOperation} className="number divide" id="/">
+                            <p id="/">÷</p>
                         </div>
                     </div>
                     <div className="row">
-                        <div onClick={addNumbers} className="number zero" name="0">
-                            <p>0</p>
+                        <div onClick={addNumbers} className="number zero" id="0">
+                            <p id="0">0</p>
                         </div>
-                        <div onClick={addNumbers} className="number decimal" name=".">
-                            <p>.</p>
+                        <div onClick={addNumbers} className="number decimal" id=".">
+                            <p id=".">.</p>
                         </div>
-                        <div className="number percent" name="%">
+                        <div className="number percent" id="%">
                             {/* TODO: figure out percentages function */}
-                            <p>%</p>
+                            <p id="%">%</p>
                         </div>
                     </div>
                 </div>
